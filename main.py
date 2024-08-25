@@ -16,3 +16,5 @@ def some_function():
 
 # Call the function to see logging in action
 some_function()
+
+# when you run this main.py file you will see the logs in the terminal as well as in the logs file.
