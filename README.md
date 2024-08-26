@@ -4,8 +4,6 @@
 ## Workflows
 
 
-Here’s a clear and structured format for your README file that you can directly copy and paste to GitHub for your project **End-to-End-Machine-Learning-Project-with-Mlflow**.
-
 ---
 
 # End-to-End Machine Learning Project with MLflow
