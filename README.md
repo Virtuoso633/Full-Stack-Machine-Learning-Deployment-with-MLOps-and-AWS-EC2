@@ -1,4 +1,4 @@
-# End-to-End-Machine-Learning-Project-with-Mlflow
+# Full-Stack Machine Learning Deployment with MLOps and AWS EC2
 
 
 ## Workflows
