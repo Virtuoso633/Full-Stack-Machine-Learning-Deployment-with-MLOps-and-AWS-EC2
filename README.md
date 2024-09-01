@@ -1,12 +1,6 @@
+
+
 # Full-Stack Machine Learning Deployment with MLOps and AWS EC2
-
-
-## Workflows
-
-
----
-
-# End-to-End Machine Learning Project with MLflow
 
 This project demonstrates an end-to-end machine learning pipeline using MLflow for model tracking and management. Below is the detailed workflow and purpose for each step in the project.
 
