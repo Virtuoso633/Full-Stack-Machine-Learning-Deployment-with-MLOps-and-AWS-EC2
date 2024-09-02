@@ -24,13 +24,11 @@ import logging
 # Initialising logging stream . Why? Because, I want to see Path in terminal..
 
 logging.basicConfig(level=logging.INFO,format='[%(asctime)s]:%(message)s')
-# it is information level log, w.r.t it will save the timestamp i.e the time at which it executed and the error message or successful execution message 
+# it is information level log, i.e it will save the timestamp i.e the time at which it executed and the error message or successful execution message 
 
 project_name = "MlOpsProject"
 
 # so bacically it will create a folder called src/MlOpsProject/allmycomponents (read as == a/b : b inside a)
-
-
 
 
 
@@ -131,8 +129,6 @@ for filepath in list_of_files:
         logging.info(f"{filename} is already exists")
         
     
-
-
 """
 Summary::
 

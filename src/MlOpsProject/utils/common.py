@@ -8,7 +8,7 @@ import yaml
 from MlOpsProject import logger
 import json
 import joblib
-from ensure import ensure_annotations
+from ensure import ensure_annotations #can be used to ensure that all function annotations are properly evaluated
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
@@ -30,13 +30,27 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
         ConfigBox: ConfigBox type
     """
     try:
-        with open(path_to_yaml) as yaml_file:
+        if not os.path.exists(path_to_yaml):
+            logger.error(f"YAML file: {path_to_yaml} does not exist.")
+            raise FileNotFoundError(f"File not found: {path_to_yaml}")
+
+        with open(path_to_yaml, 'r') as yaml_file:
             content = yaml.safe_load(yaml_file)
-            logger.info(f"yaml file: {path_to_yaml} loaded successfully")
+
+            # Validate content is a dictionary or list
+            if not isinstance(content, (dict, list)):
+                logger.error(f"YAML file: {path_to_yaml} contains invalid content for ConfigBox.")
+                raise BoxValueError(f"Invalid content format in {path_to_yaml}. Expected dict or list.")
+
+            logger.info(f"YAML file: {path_to_yaml} loaded successfully.")
             return ConfigBox(content)
-    except BoxValueError:
-        raise ValueError("yaml file is empty")
+
+    except BoxValueError as bve:
+        logger.error(f"BoxValueError: Cannot extrapolate Box from content of the file: {path_to_yaml}. {bve}")
+        raise bve
+
     except Exception as e:
+        logger.error(f"An error occurred while reading YAML file: {path_to_yaml}. Error: {e}")
         raise e
     
 

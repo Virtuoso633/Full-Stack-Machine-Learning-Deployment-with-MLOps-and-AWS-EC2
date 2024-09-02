@@ -11,7 +11,6 @@ artifacts_root: artifacts
 
 
 
-
 data_ingestion:
   root_dir: artifacts/data_ingestion
   source_URL: https://github.com/Virtuoso633/Branching-Data/raw/main/winequality-red.csv.zip

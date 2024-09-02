@@ -27,4 +27,6 @@ setuptools.setup(
     packages=setuptools.find_packages(where="src")
 )
 
-
+#the setup.py file allows your project to be packaged as a Python module that can be easily installed, distributed, and shared with others. 
+# By running this script, users can install your project and its dependencies using pip, making your ML app reusable and easy to deploy.
+#It ensures your project is not just a codebase but a fully functional Python package ready to be integrated into real-world machine learning and MLOps pipelines on AWS EC2.
