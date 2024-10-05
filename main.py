@@ -21,9 +21,10 @@
 
 
 
-## Stage 2 - Data Ingestion
+## Stage 1 - Data Ingestion
 from MlOpsProject import logger
 from MlOpsProject.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+from MlOpsProject.pipeline.stage_02_data_validation import DataValidationTrainingPipeline
 
 STAGE_NAME = "Data Ingestion stage"
 
@@ -35,4 +36,19 @@ try:
 except Exception as e:
     logger.exception(e)
     raise e
+
+
+# Stage 2 - Data Validation
+
+STAGE_NAME = "Data Validation stage"
+
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_validation = DataValidationTrainingPipeline()  # Changed variable name for clarity
+    data_validation.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
 
