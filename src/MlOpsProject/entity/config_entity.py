@@ -29,6 +29,7 @@ class ModelTrainerConfig:
     model_name: str
     alpha: float
     l1_ratio: float
+    param_grid: dict  # Add param_grid to store hyperparameter tuning options
     target_column: str
 
 

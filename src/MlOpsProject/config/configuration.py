@@ -81,13 +81,14 @@ class ConfigurationManager:
         create_directories([config.root_dir])
 
         model_trainer_config = ModelTrainerConfig(
-            root_dir=config.root_dir,
-            train_data_path = config.train_data_path,
-            test_data_path = config.test_data_path,
-            model_name = config.model_name,
-            alpha = params.alpha,
-            l1_ratio = params.l1_ratio,
-            target_column = schema.name
+            root_dir=Path(config.root_dir),
+            train_data_path=Path(config.train_data_path),
+            test_data_path=Path(config.test_data_path),
+            model_name=config.model_name,
+            alpha=params.alpha,  
+            l1_ratio=params.l1_ratio, 
+            param_grid=params.param_grid, 
+            target_column=schema.name
         )
 
         return model_trainer_config
