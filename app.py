@@ -60,7 +60,7 @@ def index():
 
         except Exception as e:
             print('The Exception message is:', e)
-            return 'Something went wrong. Check the server logs for more details.'
+            return 'Something went wrong. Check logs for more details.'
         
     else:
         return render_template('index.html')
